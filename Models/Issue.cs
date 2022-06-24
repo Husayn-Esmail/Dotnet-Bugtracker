@@ -13,7 +13,7 @@ namespace bugtracker.Models
         public string? Description { get; set; }
         public string? Priority { get; set; }
         public string? IssueType { get; set; }
-        // Create a parameter for assigned users (list of users)
-        // Create a parameter for who last modified (type user)
+        public User[]? AssignedUsers { get; set; }
+        public User? LastModifiedBy { get; set; }
     }
 }
