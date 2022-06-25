@@ -9,3 +9,10 @@ dotnet development and authentication.
 Languages: C# <br>
 Design Pattern: MVC (Model-View-Controller)<br>
 Frameworks: ASP.NET 6 <br>
+Packages: 
+- Npgsql.EntityFrameworkCore.PostgreSQL
+- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.SQLite
+- Microsoft.VisualStudio.Web.CodeGeneration.Design
+- Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
