@@ -21,9 +21,9 @@ namespace bugtracker.Controllers
         // GET: JointUserIssue
         public async Task<IActionResult> Index()
         {
-            return _context.JointUserIssue != null ?
-                View(await _context.JointUserIssue.ToListAsync()) :
-                Problem("Entity set 'JointUserIssueContext.JointUserIssue' is null.");
+              return _context.JointUserIssue != null ? 
+                          View(await _context.JointUserIssue.ToListAsync()) :
+                          Problem("Entity set 'JointUserIssueContext.JointUserIssue'  is null.");
         }
 
         // GET: JointUserIssue/Details/5
@@ -107,7 +107,8 @@ namespace bugtracker.Controllers
                     {
                         return NotFound();
                     }
-                    else{
+                    else
+                    {
                         throw;
                     }
                 }
@@ -117,7 +118,7 @@ namespace bugtracker.Controllers
         }
 
         // GET: JointUserIssue/Delete/5
-        public async Task<IActionResult> Delete (int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.JointUserIssue == null)
             {
@@ -141,21 +142,21 @@ namespace bugtracker.Controllers
         {
             if (_context.JointUserIssue == null)
             {
-                return Problem("Entity set 'JointUserIssueContext.JointUserIssue' is null.");
+                return Problem("Entity set 'JointUserIssueContext.JointUserIssue'  is null.");
             }
             var jointUserIssue = await _context.JointUserIssue.FindAsync(id);
             if (jointUserIssue != null)
             {
                 _context.JointUserIssue.Remove(jointUserIssue);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool JointUserIssueExists(int id)
         {
-            return (_context.JointUserIssue?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.JointUserIssue?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

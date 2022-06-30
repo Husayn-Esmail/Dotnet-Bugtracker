@@ -16,3 +16,15 @@ Packages:
 - Microsoft.EntityFrameworkCore.SQLite
 - Microsoft.VisualStudio.Web.CodeGeneration.Design
 - Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+
+Cool feature ideas that could be added in the future:
+- A "suggested" section that recommends certain issues based on previous 
+  usage (machine learning)
+
+working with postgres in dotnet
+https://www.npgsql.org/efcore/
+https://dotnetthoughts.net/using-postgresql-with-aspnet-core/
+
+tutorials point asp.net mvc I don't think it's that useful but I haven't 
+gotten that far yet to know:
+https://www.tutorialspoint.com/asp.net_core/asp.net_core_setup_mvc.htm

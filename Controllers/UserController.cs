@@ -21,9 +21,9 @@ namespace bugtracker.Controllers
         // GET: User
         public async Task<IActionResult> Index()
         {
-            return _context.User != null ?
-                View(await _context.User.ToListAsync()) :
-                Problem("Entity set 'UserContext.User' is null.");
+              return _context.User != null ? 
+                          View(await _context.User.ToListAsync()) :
+                          Problem("Entity set 'UserContext.User'  is null.");
         }
 
         // GET: User/Details/5
@@ -107,7 +107,8 @@ namespace bugtracker.Controllers
                     {
                         return NotFound();
                     }
-                    else{
+                    else
+                    {
                         throw;
                     }
                 }
@@ -117,7 +118,7 @@ namespace bugtracker.Controllers
         }
 
         // GET: User/Delete/5
-        public async Task<IActionResult> Delete (int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.User == null)
             {
@@ -141,21 +142,21 @@ namespace bugtracker.Controllers
         {
             if (_context.User == null)
             {
-                return Problem("Entity set 'UserContext.User' is null.");
+                return Problem("Entity set 'UserContext.User'  is null.");
             }
             var user = await _context.User.FindAsync(id);
             if (user != null)
             {
                 _context.User.Remove(user);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserExists(int id)
         {
-            return (_context.User?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.User?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
