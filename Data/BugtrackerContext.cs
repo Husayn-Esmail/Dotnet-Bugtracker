@@ -13,4 +13,6 @@ using bugtracker.Models;
         }
 
         public DbSet<bugtracker.Models.Issue>? Issue { get; set; }
+        public DbSet<bugtracker.Models.User>? User { get; set; }
+        public DbSet<bugtracker.Models.JointUserIssue>? JointUserIssue { get; set; }
     }
