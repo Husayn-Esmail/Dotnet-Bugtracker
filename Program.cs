@@ -1,8 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<BugtrackerContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("BugtrackerContext") ?? throw new InvalidOperationException("Connection string 'BugtrackerContext' not found.")));
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<BugtrackerContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("BugtrackerContext") ?? throw new InvalidOperationException("Connection string 'BugtrackerContext' not found.")));
+}
+else
+{
+    builder.Services.AddDbContext<BugtrackerContext>(options=>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("ProductionBugtrackerContext") ?? throw new InvalidOperationException("Connection string 'ProductionBugtrackerContext' not found.")));
+}
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
