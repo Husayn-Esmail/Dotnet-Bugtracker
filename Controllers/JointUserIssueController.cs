@@ -11,9 +11,9 @@ namespace bugtracker.Controllers
 {
     public class JointUserIssueController : Controller
     {
-        private readonly JointUserIssueContext _context;
+        private readonly BugtrackerContext _context;
 
-        public JointUserIssueController(JointUserIssueContext context)
+        public JointUserIssueController(BugtrackerContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace bugtracker.Controllers
         {
               return _context.JointUserIssue != null ? 
                           View(await _context.JointUserIssue.ToListAsync()) :
-                          Problem("Entity set 'JointUserIssueContext.JointUserIssue'  is null.");
+                          Problem("Entity set 'BugtrackerContext.JointUserIssue'  is null.");
         }
 
         // GET: JointUserIssue/Details/5
@@ -142,7 +142,7 @@ namespace bugtracker.Controllers
         {
             if (_context.JointUserIssue == null)
             {
-                return Problem("Entity set 'JointUserIssueContext.JointUserIssue'  is null.");
+                return Problem("Entity set 'BugtrackerContext.JointUserIssue'  is null.");
             }
             var jointUserIssue = await _context.JointUserIssue.FindAsync(id);
             if (jointUserIssue != null)

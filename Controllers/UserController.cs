@@ -11,9 +11,9 @@ namespace bugtracker.Controllers
 {
     public class UserController : Controller
     {
-        private readonly UserContext _context;
+        private readonly BugtrackerContext _context;
 
-        public UserController(UserContext context)
+        public UserController(BugtrackerContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace bugtracker.Controllers
         {
               return _context.User != null ? 
                           View(await _context.User.ToListAsync()) :
-                          Problem("Entity set 'UserContext.User'  is null.");
+                          Problem("Entity set 'BugtrackerContext.User'  is null.");
         }
 
         // GET: User/Details/5
@@ -142,7 +142,7 @@ namespace bugtracker.Controllers
         {
             if (_context.User == null)
             {
-                return Problem("Entity set 'UserContext.User'  is null.");
+                return Problem("Entity set 'BugtrackerContext.User'  is null.");
             }
             var user = await _context.User.FindAsync(id);
             if (user != null)

@@ -11,9 +11,9 @@ namespace bugtracker.Controllers
 {
     public class IssueController : Controller
     {
-        private readonly IssueContext _context;
+        private readonly BugtrackerContext _context;
 
-        public IssueController(IssueContext context)
+        public IssueController(BugtrackerContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace bugtracker.Controllers
         {
               return _context.Issue != null ? 
                           View(await _context.Issue.ToListAsync()) :
-                          Problem("Entity set 'IssueContext.Issue'  is null.");
+                          Problem("Entity set 'BugtrackerContext.Issue'  is null.");
         }
 
         // GET: Issue/Details/5
@@ -142,7 +142,7 @@ namespace bugtracker.Controllers
         {
             if (_context.Issue == null)
             {
-                return Problem("Entity set 'IssueContext.Issue'  is null.");
+                return Problem("Entity set 'BugtrackerContext.Issue'  is null.");
             }
             var issue = await _context.Issue.FindAsync(id);
             if (issue != null)

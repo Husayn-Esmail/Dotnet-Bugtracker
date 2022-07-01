@@ -10,6 +10,9 @@ using bugtracker.Models;
             : base(options)
         {
         }
-        // public DbSet<bugtracker.Models.Issue>? Issue { get; set; }
+
+        public DbSet<bugtracker.Models.Issue>? Issue { get; set; }
+        public DbSet<bugtracker.Models.JointUserIssue>? JointUserIssue { get; set; }
+        public DbSet<bugtracker.Models.User>? User { get; set; }
     }
 // should reference the joint user issue context
