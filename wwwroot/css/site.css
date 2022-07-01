@@ -16,3 +16,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#issues {
+  background-color: blue;
+  border: 5px solid red;
+  border-radius: 1rem;
+  list-style: none;
+}
+
+.issue {
+  padding: 1rem;
+  border: 5px solid red;
+  width: 100%;
+}

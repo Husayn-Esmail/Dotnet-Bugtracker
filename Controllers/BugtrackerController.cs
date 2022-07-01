@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using bugtracker.Models;
 
+/* this controller should call the functions of Issue and JointUserIssue
+ controllers */
+
 namespace bugtracker.Controllers
 {
     public class BugtrackerController : Controller
