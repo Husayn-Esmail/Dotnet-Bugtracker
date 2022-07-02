@@ -69,3 +69,33 @@ input {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
+
+.pb-3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+}
+
+form {
+  text-align: center;
+  width: 100%;
+}
+
+.search {
+  width: 60%;
+  padding: 0.3rem;
+}
+
+.button {
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  background-color: white;
+  color: black;
+}
+
