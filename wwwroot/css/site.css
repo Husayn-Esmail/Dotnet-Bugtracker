@@ -96,3 +96,7 @@ form {
   padding: 0.5rem;
 }
 
+.issue  a  {
+  text-decoration: none;
+  color: white;
+}
