@@ -3,21 +3,15 @@ html {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* If the operating system is using dark mode, then apply this CSS */
-  body {
-      background: black;
-      color: white;
-  }
-  th {
-    color: white;
-  }
-}
-
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+  }
+
+  #issues {
+    /* perfect number to scale the list with the search */
+    width: 82%;
   }
 }
 
@@ -39,7 +33,7 @@ input {
 }
 
 #issues {
-  background-color: blue;
+  background-color: white;
   border: 2px solid grey;
   border-radius: 1rem;
   list-style: none;
@@ -49,25 +43,25 @@ input {
 
 .issue {
   padding: 1rem;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid black;
   width: 100%;
 }
 
-.issue:hover {
+.issue:hover{
   background-color: lightblue;
   cursor: pointer;
-  color: grey;
+  color: black;
 }
 
 .bottom {
   border-bottom: none;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
 }
 
 .top {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: .8rem;
+  border-top-right-radius: .8rem;
 }
 
 .pb-3 {
@@ -96,7 +90,46 @@ form {
   padding: 0.5rem;
 }
 
-.issue  a  {
+.issue a {
   text-decoration: none;
-  color: white;
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* If the operating system is using dark mode, then apply this CSS */
+  body {
+      background: black;
+      color: white;
+  }
+  th {
+    color: white;
+  }
+
+  #issues {
+    background-color: grey;
+  }
+
+  .issue {
+    background-color: grey;
+    color: white;
+  }
+
+  .issue a {
+    color: white;
+  }
+
+  .search {
+    background-color: grey;
+    color: white;
+  }
+
+  .button {
+    background-color: grey;
+    color:white;
+  }
+
+  .button:hover {
+    background-color: lightblue;
+    color:black;
+  }
 }

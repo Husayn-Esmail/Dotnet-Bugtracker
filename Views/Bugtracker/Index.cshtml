@@ -1,4 +1,5 @@
 @* @model IEnumerable<bugtracker.Models.Issue> *@
+@model bugtracker.Models.Issue
 
 @{
     ViewData["Title"] = "Index";
@@ -6,6 +7,7 @@
 
 <h1>Bug Tracker</h1>
 <form>
+    <button asp-action="Create">+</button>
     <input type="search" placeholder="search" class="search"></input>
     <input type="submit" class="button">
 </form>
