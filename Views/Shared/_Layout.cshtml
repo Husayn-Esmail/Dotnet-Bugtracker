@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/bugtracker.styles.css" asp-append-version="true" />
+    @* use this to reference stylesheets across different pages *@
+    <link rel="stylesheet" href=@Html.Raw(@ViewData["styles"]) asp-append-version="true" />
 </head>
 <body>
     <header>
