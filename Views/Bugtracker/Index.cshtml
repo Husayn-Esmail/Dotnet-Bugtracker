@@ -15,8 +15,8 @@
             <div class="modal" id="modal1">
                 <div clsas="modal-dialog">
                     <header class="modal-header">
-                        <p>a modal</p>
-                        <input class="close-modal button" aria-label="close modal">x</button>
+                        <p>Create New Issue</p>
+                        <button class="close-modal button" arial-lable="close modal" data-close>x</button>
                     </header>
                     <section class="modal-content">
                         <input label="firstname" type="text" />
@@ -37,10 +37,18 @@
         @foreach (var item in Model) {
             <li class="issue">
                 <a href="#">
-                    @Html.DisplayFor(modelItem => item.Status)
-                    @Html.DisplayFor(modelItem => item.Title)
-                    @Html.DisplayFor(modelItem => item.Priority)
-                    @Html.DisplayFor(modelItem => item.IssueType)
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </p>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </p>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </p>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.IssueType)
+                    </p>
                 </a>
             </li>
         }
