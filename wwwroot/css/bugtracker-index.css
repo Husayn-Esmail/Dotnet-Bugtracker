@@ -1,3 +1,4 @@
+/* Global Default */
 html {
   font-size: 16px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -9,19 +10,48 @@ h1 {
   width: 100%;
 }
 
-/* html {
-  position: relative;
-  min-height: 100%;
+/* Search Default */
+form {
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
 }
 
-body {
-  margin-bottom: 60px;
-} */
+.search {
+  width: 60%;
+  border: none;
+  padding: .7rem;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+
+.button {
+  padding: .7rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: .2rem;
+}
+
+input {
+  margin-top: 1rem;
+}
+
+.form-container {
+  display: flexbox;
+  flex-wrap: nowrap;
+  width: 100%;
+}
 
 /* Issues List Default */
+.content-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 #issues {
   padding-top: 1rem;
+  width: 75%;
 }
 
 .issue a {
@@ -29,6 +59,13 @@ body {
   width: 100%;
   text-decoration: none;
   padding: 1rem;
+  border: 1px solid black;
+  color: black;
+}
+
+.issue a:hover {
+  color: white;
+  background-color: gray;
 }
 
 .top {
@@ -41,27 +78,6 @@ body {
   border-bottom-right-radius: 1rem;
 }
 
-
-
-/* Search */
-/* form {
-  text-align: center;
-  width: 100%;
-} */
-
-/* .search {
-  width: 60%;
-  padding: 0.3rem;
-} */
-
-/* input {
-  margin-top: 1rem;
-} */
-
-/* .button {
-  border: none;
-  padding: 0.5rem;
-} */
 
 /* Issues List */
 /* .pb-3 {
@@ -127,8 +143,6 @@ body {
   .button {
     background-color: grey;
     color: white;
-    padding: .2rem;
-    border: 1px solid white;
   }
 
   .button:hover {

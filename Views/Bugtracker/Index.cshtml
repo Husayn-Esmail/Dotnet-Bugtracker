@@ -7,36 +7,38 @@
 
 <script type="module" src="~/js/modal.js"></script>
 <h1>Bug Tracker</h1>
-<form>
-    @* opens a modal which will need to link with the bugtracker controller *@
-    <button type="button" class="button" data-open="modal1">+</button>
-    <div class="modal" id="modal1">
-        <div clsas="modal-dialog">
-            <header class="modal-header">
-                <p>a modal</p>
-                <input class="close-modal button" aria-label="close modal">x</button>
-            </header>
-            <section class="modal-content">
-                <input label="firstname" type="text" />
-                <input label="lastname" type="text" />
-            </section>
-            <footer class="modal-footer">
-                <button class="button" type="submit">submit</button>
-            </footer>
-        </div>
+<div class="content-container">
+    <div class="form-container">
+        <form>
+            @* opens a modal which will need to link with the bugtracker controller *@
+            <button type="button" class="button" data-open="modal1">+</button>
+            <div class="modal" id="modal1">
+                <div clsas="modal-dialog">
+                    <header class="modal-header">
+                        <p>a modal</p>
+                        <input class="close-modal button" aria-label="close modal">x</button>
+                    </header>
+                    <section class="modal-content">
+                        <input label="firstname" type="text" />
+                        <input label="lastname" type="text" />
+                    </section>
+                    <footer class="modal-footer">
+                        <button class="button" type="submit">submit</button>
+                    </footer>
+                </div>
+            </div>
+            <input type="search" placeholder="search" class="search"></input>
+            <input type="submit" class="button">
+        </form>
     </div>
-    <input type="search" placeholder="search" class="search"></input>
-    <input type="submit" class="button">
-</form>
-
-<ul id="issues">
-    <li class="issue"><a class="top" href="https://google.com">dummy item</a></li>
-    <li class="issue"><a href="#">dummy item2</a></li>
-    <li class="issue"><a href="#">dummy item3</a></li>
-    <li class="issue"><a href="#">dummy item4</a></li>
-    <li class="issue"><a class="bottom" href="#">dummy item5</a></li>
-
-</ul>
+    <ul id="issues">
+        <li class="issue"><a class="top" href="https://google.com">dummy item</a></li>
+        <li class="issue"><a href="#">dummy item2</a></li>
+        <li class="issue"><a href="#">dummy item3</a></li>
+        <li class="issue"><a href="#">dummy item4</a></li>
+        <li class="issue"><a class="bottom" href="#">dummy item5</a></li>
+    </ul>
+</div>
 
 @* <p>
     <a asp-action="Create">Create New</a>
