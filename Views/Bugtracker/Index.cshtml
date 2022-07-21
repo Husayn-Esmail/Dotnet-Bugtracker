@@ -1,4 +1,4 @@
-@* @model IEnumerable<bugtracker.Models.Issue> *@
+@model IEnumerable<bugtracker.Models.Issue>
 
 @{
     ViewData["Title"] = "Index";
@@ -31,9 +31,19 @@
             <input type="submit" class="button">
         </form>
     </div>
+    @* Issues list *@
     <ul id="issues">
         <li class="issue"><a class="top" href="https://google.com">dummy item</a></li>
-        <li class="issue"><a href="#">dummy item2</a></li>
+        @foreach (var item in Model) {
+            <li class="issue">
+                <a href="#">
+                    @Html.DisplayFor(modelItem => item.Status)
+                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(modelItem => item.Priority)
+                    @Html.DisplayFor(modelItem => item.IssueType)
+                </a>
+            </li>
+        }
         <li class="issue"><a href="#">dummy item3</a></li>
         <li class="issue"><a href="#">dummy item4</a></li>
         <li class="issue"><a class="bottom" href="#">dummy item5</a></li>

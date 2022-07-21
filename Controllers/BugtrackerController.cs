@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using bugtracker.Models;
-
 /* this controller should call the functions of Issue and JointUserIssue
  controllers */
 
@@ -14,9 +13,18 @@ namespace bugtracker.Controllers
 {
     public class BugtrackerController : Controller
     {
-        public IActionResult Index()
+        private readonly BugtrackerContext _context;
+        public BugtrackerController(BugtrackerContext context)
         {
-            return View();
+            _context = context;
+        }
+        
+        // GET: Issue
+        public async Task<IActionResult> Index()
+        {
+            return _context.Issue != null ?
+                View(await _context.Issue.ToListAsync()) :
+                Problem("Entity set 'BugtrackerContext.Issue' is null.");
         }
 
         public IActionResult Create()
