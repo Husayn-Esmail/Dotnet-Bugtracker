@@ -27,9 +27,24 @@ namespace bugtracker.Controllers
                 Problem("Entity set 'BugtrackerContext.Issue' is null.");
         }
 
+        // GET: Issue/Create
         public IActionResult Create()
         {
             return View();
+        }
+
+        // POST: Issue/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Status,Title,Description,Priority,IssueType,DateTimeCreated,DateTimeModified,LastModifiedBy")] Issue issue)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(issue);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(issue);
         }
     }
 }

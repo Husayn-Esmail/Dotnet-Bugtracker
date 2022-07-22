@@ -12,6 +12,10 @@
         <form>
             @* opens a modal which will need to link with the bugtracker controller *@
             <button type="button" class="button" data-open="modal1">+</button>
+            <input type="search" placeholder="search" class="search"></input>
+            <input type="submit" class="button">
+        </form>
+        <form asp-action="Create">
             <div class="modal" id="modal1">
                 <div clsas="modal-dialog">
                     <header class="modal-header">
@@ -19,16 +23,28 @@
                         <button class="close-modal button" arial-lable="close modal" data-close>x</button>
                     </header>
                     <section class="modal-content">
-                        <input label="firstname" type="text" />
-                        <input label="lastname" type="text" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        @* <div class="modal-content"> *@
+                            <p class="input-label">Status</p>
+                            <input class="field" label="status" type="text" />
+                            <p class="input-label">Title</p>
+                            <input class="field" label="title" type="text" />
+                            <p class="input-label">Description</p>
+                            <input class="field" label="description" type="text"/>
+                            <p class="input-label">Priority</p>
+                            <input class="field" label="priority" type="text" />
+                            <p class="input-label">Type</p>
+                            <input class="field" label="type" type="text" />
+                        @* </div> *@
                     </section>
                     <footer class="modal-footer">
                         <button class="button" type="submit">submit</button>
+                        @section Scripts {
+                            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                        }
                     </footer>
                 </div>
             </div>
-            <input type="search" placeholder="search" class="search"></input>
-            <input type="submit" class="button">
         </form>
     </div>
     @* Issues list *@
