@@ -33,6 +33,9 @@ namespace bugtracker.Controllers
             return View();
         }
 
+        public IActionResult OnGetPartial() =>
+            PartialView("Test");
+
         // POST: Issue/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
