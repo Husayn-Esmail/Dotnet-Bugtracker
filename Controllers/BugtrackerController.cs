@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using bugtracker.Models;
+using bugtracker.ViewModels;
 /* this controller should call the functions of Issue and JointUserIssue
  controllers */
 
@@ -34,7 +35,7 @@ namespace bugtracker.Controllers
         }
 
         public IActionResult OnGetPartial() =>
-            PartialView("Test");
+            PartialView("test");
 
         // POST: Issue/Create
         [HttpPost]

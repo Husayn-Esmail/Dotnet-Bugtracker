@@ -5,6 +5,13 @@
     ViewData["styles"] = "~/css/bugtracker-index.css";
 }
 
+@* NOTES: View model is a way to do what I want to do in regards to the modal
+   so that's a possible solution that's worth looking into.
+   However, in the interest of keeping views decoupled it might be best to
+   forgo the modal idea and instead keep them as separate pages. Style the
+   create page much better and link the create button on index to the create
+   page. *@
+
 <script type="module" src="~/js/modal.js"></script>
 <h1>Bug Tracker</h1>
 <div class="content-container">
@@ -12,10 +19,10 @@
         <form>
             @* opens a modal which will need to link with the bugtracker controller *@
             <button type="button" class="button" data-open="modal1">+</button>
-            <p class="button">
-            @Html.ActionLink("+", "Create")
+            @* <p class="button"> *@
+            @* @Html.ActionLink("+", "Create") *@
             @* @{Html.RenderPartial("Create", "Issue");} *@
-            </p>
+            @* </p> *@
             <input type="search" placeholder="search" class="search"></input>
             <input type="submit" class="button">
         </form>
@@ -29,12 +36,12 @@
                     <section class="modal-content">
                         @* <partial name="~/Views/Bugtracker/Create.cshtml" /> *@
                         @* @await Html.PartialAsync("Create") *@
-                        @{
+                        @* @{
                             await Html.RenderPartialAsync("test");
-                        }
+                        } *@
                         @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <p class="input-label">Status</p>
-                        <input class="field" label="status" type="text" />
+                        <input class="field" label="status" asp-for="Issue.Status" type="text" />
                         <p class="input-label">Title</p>
                         <input class="field" label="title" type="text" />
                         <p class="input-label">Description</p>
