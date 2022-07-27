@@ -14,23 +14,8 @@ form {
 
 .search {
   width: 60%;
-  border: none;
-  padding: .7rem;
-  border: 1px solid black;
-  border-radius: 0.2rem;
-  font-size: 1.1rem;
 }
 
-.button {
-  padding: .7rem;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: .2rem;
-}
-
-input {
-  margin-top: 1rem;
-}
 
 .form-container {
   display: flexbox;
@@ -112,11 +97,6 @@ input {
 
 
 @media (prefers-color-scheme: dark) {
-  /* If the operating system is using dark mode, then apply this CSS */
-  body {
-      background: black;
-      color: white;
-  }
   th {
     color: white;
   }
@@ -135,17 +115,9 @@ input {
 
   /* Search Bar */
   .search {
-    background-color: grey;
+    background-color: lightslategray;
     color: white;
   }
 
-  .button {
-    background-color: grey;
-    color: white;
-  }
-
-  .button:hover {
-    background-color: lightgrey;
-    color: black;
-  }
+  
 }

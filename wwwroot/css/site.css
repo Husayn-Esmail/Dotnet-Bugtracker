@@ -2,3 +2,45 @@ html {
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.button {
+    padding: .7rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: .2rem;
+}
+
+input {
+    margin-top: 1rem;
+}
+
+.text-input {
+    padding: .7rem;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    font-size: 1.1rem;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    /* If the operating system is using dark mode, then apply this CSS */
+    body {
+        background: black;
+        color: white;
+    }
+
+    .button {
+        background-color: grey;
+        color: white;
+      }
+    
+      .button:hover {
+        background-color: lightgrey;
+        color: black;
+      }
+
+      .text-input {
+        background-color: grey;
+        color: white;
+      }
+}
