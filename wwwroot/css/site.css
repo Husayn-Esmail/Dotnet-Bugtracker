@@ -43,4 +43,9 @@ input {
         background-color: grey;
         color: white;
       }
+
+      td,
+      th {
+        color: white;
+      }
 }
