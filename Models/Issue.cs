@@ -59,17 +59,14 @@ namespace bugtracker.Models
         [Display(Name = "Created")]
         public DateTime DateTimeCreated { get; set; }
         [Display(Name = "Modified")]
-        public DateTime DateTimeModifed { get; set; }
-        // FIXME: Databases cannot store lists, figure out another way to keep track of assigned users.
-        // Trying to circumvent this limitation is bad practice and should not be used.
-        // This is also going to be an issue within the User Model.
+        public DateTime DateTimeModified { get; set; }
         [Display(Name = "Last Modified By")]
         public int? LastModifiedBy { get; set; }
 
         public void Init()
         {
             this.DateTimeCreated = DateTime.Now;
-            this.DateTimeModifed = DateTime.Now;
+            this.DateTimeModified = DateTime.Now;
             this.Status = "open";
         }
 
