@@ -65,5 +65,16 @@ namespace bugtracker.Models
         // This is also going to be an issue within the User Model.
         [Display(Name = "Last Modified By")]
         public int? LastModifiedBy { get; set; }
+
+        public void Init()
+        {
+            this.DateTimeCreated = DateTime.Now;
+            this.DateTimeModifed = DateTime.Now;
+            this.Status = "open";
+        }
+
+        public Issue() {
+            Init();
+        }
     }
 }
