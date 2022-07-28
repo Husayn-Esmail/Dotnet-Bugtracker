@@ -59,27 +59,67 @@ form {
   border-bottom-right-radius: 1rem;
 }
 
-
-/* Issues List */
-/* .pb-3 {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-} */
-
-/* #issues {
-  background-color: white;
-  border: 2px solid grey;
-  border-radius: 1rem;
-  list-style: none;
-  margin-top: 1rem;
-  width: 75%;
-} */
-
 /* .input-label {
 } */
 .field {
   margin-bottom: 1rem;
+}
+
+/* modal */
+.modal-container {
+  
+  z-index: 50;
+  padding: 2rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.1s ease-in;
+}
+
+.modal-footer,
+.modal-header {
+  color: black;
+  background-color: lightgrey;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header .modal-close {
+  font-size: 1.5rem;
+}
+
+.modal p + p {
+  margin-top: 1rem;
+}
+
+.issue-container {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: white;
+  overflow: auto;
+  cursor: default;
+  color: black;
+}
+
+.issue-container > *{
+  padding: 1rem;
+}
+
+.modal.is-visible {
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000050;
+}
+
+.issue-container.is-visible {
+  display: flex;
 }
 
 /* Media Queries */
@@ -118,6 +158,5 @@ form {
     background-color: lightslategray;
     color: white;
   }
-
-  
 }
+

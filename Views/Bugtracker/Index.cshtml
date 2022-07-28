@@ -12,13 +12,11 @@
    create page much better and link the create button on index to the create
    page. *@
 
-<script type="module" src="~/js/modal.js"></script>
+<script type="module" src="~/js/issue_modal.js"></script>
 <h1>Bug Tracker</h1>
 <div class="content-container">
     <div class="form-container">
         <form>
-            @* opens a modal which will need to link with the bugtracker controller *@
-            @* <button class="button" asp-action="Create">+</button> *@
             <button class="button" asp-action="Create">+</button>
             <input type="search" placeholder="search" class="search text-input"></input>
             <input type="submit" class="button">
@@ -26,10 +24,35 @@
     </div>
     @* Issues list *@
     <ul id="issues">
-        <li class="issue"><a class="top" href="https://google.com">dummy item</a></li>
+        @{var id = 0;}        
+        @foreach (var item in Model) {
+            <div class="modal" id="modal@(id++)">
+                <div class="issue-container">
+                    <header class="modal-header">
+                        <button class="button" aria-label="close modal" data-close>x</button>
+                    </header>
+                    <section class="modal-content">
+                        <p>@Html.DisplayFor(modelItem => item.Status)</p>
+                        <p>@Html.DisplayFor(modelItem => item.IssueType)</p>
+                        <p>@Html.DisplayFor(modelItem => item.Priority)</p>
+                        <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    </section>
+                    <footer class="modal-footer">
+                        <p>@Html.DisplayFor(modelItem => item.DateTimeCreated)</p>
+                        <p>@Html.DisplayFor(modelItem => item.DateTimeModified)</p>
+                        <p>@Html.DisplayFor(modelItem => item.LastModifiedBy)</p>
+                        <button>Edit</button>
+                    </footer>
+                </div>
+            </div>
+        }
+
+        <li class="issue"><a class="top" href="#">dummy item</a></li>
+        @{var modalId = 0;}
         @foreach (var item in Model) {
             <li class="issue">
-                <a href="#">
+                <a href="#" data-open="modal@(modalId++)">
                     <p>
                         @Html.DisplayFor(modelItem => item.Status)
                     </p>
@@ -45,8 +68,6 @@
                 </a>
             </li>
         }
-        <li class="issue"><a href="#">dummy item3</a></li>
-        <li class="issue"><a href="#">dummy item4</a></li>
         <li class="issue"><a class="bottom" href="#">dummy item5</a></li>
     </ul>
 </div>
