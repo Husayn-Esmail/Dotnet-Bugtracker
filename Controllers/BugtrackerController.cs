@@ -36,10 +36,12 @@ namespace bugtracker.Controllers
         // POST: Issue/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Status,Title,Description,Priority,IssueType,DateTimeCreated,DateTimeModified,LastModifiedBy")] Issue issue)
+        public async Task<IActionResult> Create([Bind("Id,Status,Title,Description,Priority,IssueType,LastModifiedBy")] Issue issue)
         {
             if (ModelState.IsValid)
             {
+                issue.DateTimeCreated = DateTime.Now;
+                issue.DateTimeModifed = DateTime.Now;
                 _context.Add(issue);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
