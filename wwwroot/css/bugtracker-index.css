@@ -77,8 +77,9 @@ form {
 
 .modal-footer,
 .modal-header {
-  color: black;
-  background-color: lightgrey;
+  color: white;
+  background-color: #393942;
+  border: none;
 }
 
 .modal-header {
@@ -95,21 +96,6 @@ form {
   margin-top: 1rem;
 }
 
-.issue-container {
-  position: relative;
-  max-width: 800px;
-  max-height: 80vh;
-  border-radius: 5px;
-  background: white;
-  overflow: auto;
-  cursor: default;
-  color: black;
-}
-
-.issue-container > *{
-  padding: 1rem;
-}
-
 .modal.is-visible {
   display: flex;
   opacity: 1;
@@ -118,9 +104,66 @@ form {
   background-color: #00000050;
 }
 
+.issue-container {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: rgb(52, 52, 52);
+  overflow: auto;
+  cursor: default;
+  color: white;
+}
+
+.issue-container > *{
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: rgb(42, 42, 42);
+  border: 1px solid  rgb(42, 42, 42);
+  padding-top: 0;
+}
+
 .issue-container.is-visible {
   display: flex;
 }
+
+
+.issue-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.priority {
+  border: 1px solid red;
+  background-color: orange;
+  padding: 0.5rem;
+  width: fit-content;
+  border-radius: 2rem;
+  color: black;
+}
+
+.open {
+  background-color: green;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.6rem;
+}
+
+.modal-subheading {
+  padding-bottom: .5rem;
+  padding-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
 
 /* Media Queries */
 

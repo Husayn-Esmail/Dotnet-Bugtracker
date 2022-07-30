@@ -30,18 +30,21 @@
                 <div class="issue-container">
                     <header class="modal-header">
                         <button class="button modal-close" type="button" aria-label="close modal" data-close>x</button>
+                        <h2 class="issue-title">@Html.DisplayFor(modelItem => item.Title)</h2>
+                        <p class="status open">@Html.DisplayFor(modelItem => item.Status)</p>
                     </header>
                     <section class="modal-content">
-                        <p>@Html.DisplayFor(modelItem => item.Status)</p>
+                        <h3 class="modal-subheading">Priority:</h3>
+                        <p class="priority">@Html.DisplayFor(modelItem => item.Priority)</p>
+                        <h3 class="modal-subheading">Description:</h3>
+                        <p class="issue-description">@Html.DisplayFor(modelItem => item.Description)</p>
+                        <h3 class="modal-subheading">Type:</h3>
                         <p>@Html.DisplayFor(modelItem => item.IssueType)</p>
-                        <p>@Html.DisplayFor(modelItem => item.Priority)</p>
-                        <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
-                        <p>@Html.DisplayFor(modelItem => item.Description)</p>
                     </section>
                     <footer class="modal-footer">
-                        <p>@Html.DisplayFor(modelItem => item.DateTimeCreated)</p>
-                        <p>@Html.DisplayFor(modelItem => item.DateTimeModified)</p>
-                        <p>@Html.DisplayFor(modelItem => item.LastModifiedBy)</p>
+                        <p>Created: @Html.DisplayFor(modelItem => item.DateTimeCreated)</p>
+                        <p>Modifed: @Html.DisplayFor(modelItem => item.DateTimeModified)</p>
+                        <p>Modified by: @Html.DisplayFor(modelItem => item.LastModifiedBy)</p>
                         <button class="button" type="button">Edit</button>
                     </footer>
                 </div>
