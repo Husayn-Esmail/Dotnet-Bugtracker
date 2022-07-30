@@ -29,7 +29,7 @@
             <div class="modal" id="modal@(id++)">
                 <div class="issue-container">
                     <header class="modal-header">
-                        <button class="button modal-close" type="button" aria-label="close modal" data-close>x</button>
+                        <button class="button modal-close" type="button" aria-label="close modal" data-close>X</button>
                         <h2 class="issue-title">@Html.DisplayFor(modelItem => item.Title)</h2>
                         <p class="status open">@Html.DisplayFor(modelItem => item.Status)</p>
                     </header>
@@ -42,10 +42,21 @@
                         <p>@Html.DisplayFor(modelItem => item.IssueType)</p>
                     </section>
                     <footer class="modal-footer">
-                        <p>Created: @Html.DisplayFor(modelItem => item.DateTimeCreated)</p>
-                        <p>Modifed: @Html.DisplayFor(modelItem => item.DateTimeModified)</p>
-                        <p>Modified by: @Html.DisplayFor(modelItem => item.LastModifiedBy)</p>
-                        <button class="button" type="button">Edit</button>
+                        <div class="dates">
+                            <div class="date">
+                                <h4>Created:</h4>
+                                <p class="datetime">@Html.DisplayFor(modelItem => item.DateTimeCreated)</p>
+                            </div>
+                            <br>
+                            <div class="date">
+                                <h4>Modified:</h4>
+                                <p class="datetime">@Html.DisplayFor(modelItem => item.DateTimeModified)</p>
+                            </div>
+                        </div>
+                        <div>
+                        <p class="userid">Modified by: @Html.DisplayFor(modelItem => item.LastModifiedBy)</p>
+                        </div>
+                        <button class="button modal-edit" type="button">Edit</button>
                     </footer>
                 </div>
             </div>
