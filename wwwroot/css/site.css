@@ -32,20 +32,35 @@ input {
     .button {
         background-color: grey;
         color: white;
-      }
+    }
     
-      .button:hover {
-        background-color: lightgrey;
-        color: black;
-      }
+    .button:hover {
+      background-color: lightgrey;
+      color: black;
+    }
 
-      .text-input {
-        background-color: grey;
-        color: white;
-      }
+    .text-input {
+      background-color: grey;
+      color: white;
+    }
 
-      td,
-      th {
-        color: white;
-      }
+    td,
+    th {
+      color: white;
+    }
+
+    /* Nav Bar things */
+    .navbar-override {
+      background-color: rgb(44, 44, 44) !important;
+      border: none !important;
+      color: white !important;
+    }
+
+    .nav-link-override {
+      color: white !important;
+    }
+
+    .navbar-brand-override {
+      color: white !important;
+    }
 }
