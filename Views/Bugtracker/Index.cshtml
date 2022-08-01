@@ -56,7 +56,9 @@
                         <div>
                         <p class="userid">Modified by: @Html.DisplayFor(modelItem => item.LastModifiedBy)</p>
                         </div>
-                        <button class="button modal-edit" type="button">Edit</button>
+                        <form>
+                            <button class="button modal-edit" asp-action="Edit" asp-route-id="@item.Id">Edit</button>
+                        </form>
                     </footer>
                 </div>
             </div>
