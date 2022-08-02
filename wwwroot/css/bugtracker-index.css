@@ -158,12 +158,24 @@ form {
   color: black;
 }
 
+
+/* statuses */
 .open {
-  background-color: green;
+  background-color: #00800070;
+  border: 0.2rem solid #008000;
   color: white;
   border-radius: 1rem;
   padding: 0.6rem;
 }
+
+.closed {
+  background-color: #d0000070;
+  border: 0.2rem solid #d00000;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.6rem;
+}
+
 
 .modal-subheading {
   padding-bottom: .5rem;
