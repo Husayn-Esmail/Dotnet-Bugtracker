@@ -97,6 +97,10 @@ form {
   font-weight: 600;
 }
 
+.modal-footer form {
+  width: fit-content;
+}
+
 .modal p + p {
   margin-top: 1rem;
 }
