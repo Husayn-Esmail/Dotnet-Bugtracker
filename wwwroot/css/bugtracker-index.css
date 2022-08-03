@@ -143,12 +143,46 @@ form {
   font-weight: bold;
 }
 
+/* statuses */
 .status {
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
+  border-radius: 1rem;
+  padding: 0.6rem;
 }
 
+.open {
+  background-color: #00800070;
+  border: 0.2rem solid #008000;
+}
+
+.closed {
+  background-color: #d0000070;
+  border: 0.2rem solid #d00000;
+}
+
+.archived {
+  background-color: #9800dd70;
+  border: 0.2rem solid #9800dd;
+}
+
+.resolved {
+  background-color: #00dbff70;
+  border: 0.2rem solid #00dbff;
+}
+
+.unresolved {
+  background-color: #ff780070;
+  border: 0.2rem solid #ff7800;
+}
+
+.assigned {
+  background-color: #ffffff70;
+  border: 0.2rem solid #ffffff;
+}
+
+/* priorities */
 .priority {
   border: 1px solid red;
   background-color: orange;
@@ -158,24 +192,9 @@ form {
   color: black;
 }
 
+.high {
 
-/* statuses */
-.open {
-  background-color: #00800070;
-  border: 0.2rem solid #008000;
-  color: white;
-  border-radius: 1rem;
-  padding: 0.6rem;
 }
-
-.closed {
-  background-color: #d0000070;
-  border: 0.2rem solid #d00000;
-  color: white;
-  border-radius: 1rem;
-  padding: 0.6rem;
-}
-
 
 .modal-subheading {
   padding-bottom: .5rem;
