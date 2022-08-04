@@ -3,6 +3,7 @@
 
 // Write your JavaScript code.
 
+// dynamically adds top and bottom to first and last element
 const issues = document.querySelectorAll('.issue');
 const finalItem = issues[issues.length - 1];
 const firstItem = issues[0];
