@@ -184,16 +184,33 @@ form {
 
 /* priorities */
 .priority {
-  border: 1px solid red;
-  background-color: orange;
   padding: 0.5rem;
   width: fit-content;
   border-radius: 2rem;
   color: black;
+  border: 0.2rem solid;
 }
 
 .high {
+  border: 0.2rem solid red;
+  background-color: orange;
+}
 
+.medium {
+  border: 0.2rem solid orange;
+  background-color: #ffff0070;
+  color: white;
+}
+
+.low {
+  border: 0.2rem solid blue;
+  background-color : #0000ff70;
+  color: white;
+}
+
+.default {
+  border: 0.2rem solid rgb(87, 87, 87);
+  background-color:rgba(82, 82, 82, 0.7)
 }
 
 .modal-subheading {
