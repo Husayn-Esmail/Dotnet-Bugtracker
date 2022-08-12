@@ -59,3 +59,33 @@ for (var i = 0; i < statusElements.length; i++) {
             break;
     }
 }
+
+const issueStatus = document.querySelectorAll('.issue-status');
+for (var i = 0; i < issueStatus.length; i++) {
+    let isstatus = issueStatus[i];
+    isstatus.classList.add("status");
+    switch (isstatus.innerHTML.trim()) {
+        case "open":
+            isstatus.classList.add("open");
+            break;
+        case "closed":
+            isstatus.classList.add("closed");
+            break;
+        case "unresolved":
+            isstatus.classList.add("unresolved");
+            break;
+        case "assigned":
+            isstatus.classList.add("assigned");
+            break;
+        case "resolved":
+            isstatus.classList.add("resolved");
+            break;
+        case "archived":
+            isstatus.classList.add("archived");
+            break;
+        default:
+            isstatus.classList.add("default");
+            break;
+        }
+        isstatus.innerHTML = "";
+}

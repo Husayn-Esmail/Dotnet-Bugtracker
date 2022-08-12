@@ -36,7 +36,9 @@ form {
 }
 
 .issue a {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   text-decoration: none;
   padding: 1rem;
@@ -58,6 +60,7 @@ form {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
+
 
 /* .input-label {
 } */
