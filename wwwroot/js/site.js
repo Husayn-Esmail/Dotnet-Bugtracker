@@ -30,3 +30,32 @@ for (var i = 0; i < priority.length; i++) {
             break;
     }
 }
+
+// dynamically adds correct class to status
+const statusElements = document.querySelectorAll('.status');
+for (var i = 0; i < statusElements.length; i++) {
+    let status = statusElements[i];
+    switch (status.innerHTML) {
+        case "open":
+            status.classList.add("open");
+            break;
+        case "closed":
+            status.classList.add("closed");
+            break;
+        case "archived":
+            status.classList.add("archived");
+            break;
+        case "resolved":
+            status.classList.add("resolved");
+            break;
+        case "unresolved":
+            status.classList.add("unresolved");
+            break;
+        case "assigned":
+            status.classList.add("assigned");
+            break;
+        default:
+            status.classList.add("default");
+            break;
+    }
+}
