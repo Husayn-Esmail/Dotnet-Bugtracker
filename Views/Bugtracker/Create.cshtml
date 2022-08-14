@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    ViewData["styles"] = "~/css/bugtracker-create.css";
 }
 
 <h1>Create</h1>
@@ -24,7 +25,12 @@
             </div>
             <div class="form-group">
                 @* <label asp-for="Priority" class="control-label"></label> *@
-                <input asp-for="Priority" class="text-input" placeholder="Priority" />
+                @* <input asp-for="Priority" class="text-input" placeholder="Priority" /> *@
+                <select asp-for="Priority" class="form-control">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
                 <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -54,8 +60,8 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="back">
+    <a class="button" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

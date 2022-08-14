@@ -1,0 +1,19 @@
+.form-group select {
+    margin-top: 1rem;
+}
+
+.back {
+    margin-top: 1.5rem;
+}
+
+.back a {
+    text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .form-group select {
+        background-color: grey;
+        color: white;
+        border: transparent;
+    }
+}
