@@ -20,11 +20,20 @@ namespace bugtracker.Controllers
         }
         
         // GET: Issue
-        public async Task<IActionResult> Index()
+        // public async Task<IActionResult> Index()
+        // {
+        //     return _context.Issue != null ?
+        //         View(await _context.Issue.ToListAsync()) :
+        //         Problem("Entity set 'BugtrackerContext.Issue' is null.");
+        // }
+        public async Task<IActionResult> Index(string searchString)
         {
-            return _context.Issue != null ?
-                View(await _context.Issue.ToListAsync()) :
-                Problem("Entity set 'BugtrackerContext.Issue' is null.");
+            var issues = from i in _context.Issue select i;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                issues = issues.Where(i => i.Title!.Contains(searchString));
+            }
+            return View(await issues.ToListAsync());
         }
 
         // GET: Issue/Create

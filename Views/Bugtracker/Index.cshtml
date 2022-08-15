@@ -17,10 +17,12 @@
 <h1>Bug Tracker</h1>
 <div class="content-container">
     <div class="form-container">
-        <form>
-            <button class="button" asp-action="Create">+</button>
-            <input type="search" placeholder="search" class="search text-input"></input>
-            <input type="submit" class="button">
+        <form class="create-button">
+        <button class="button" type="submit" asp-action="Create">+</button>
+        </form>
+        <form id=1 class="search-form">
+            <input type="search" placeholder="search" class="search text-input" name="searchString"/>
+            <button type="submit" value="search" value="submit" class="button" form=1>submit</button>
         </form>
     </div>
     @* Issues list *@

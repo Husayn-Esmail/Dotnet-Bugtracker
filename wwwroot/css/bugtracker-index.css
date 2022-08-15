@@ -8,19 +8,40 @@ h1 {
 /* Search Default */
 form {
   text-align: center;
-  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
   margin-top: 1rem;
 }
 
+.form-container input {
+  margin: 0;
+}
+
 .search {
-  width: 60%;
+  width: 87%;
+}
+
+.search-form {
+  display: flex;
+  width: 90%;
+  flex-wrap: nowrap;
+  margin-left: 0.5rem;
+}
+
+.search-form button {
+  margin-left: 0.5rem;
 }
 
 
-.form-container {
-  display: flexbox;
-  flex-wrap: nowrap;
-  width: 100%;
+.create-button {
+  width: fit-content;
+  justify-content: center;
 }
 
 /* Issues List Default */
