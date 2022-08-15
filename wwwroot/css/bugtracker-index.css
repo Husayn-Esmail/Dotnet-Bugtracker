@@ -38,7 +38,6 @@ form {
   margin-left: 0.5rem;
 }
 
-
 .create-button {
   width: fit-content;
   justify-content: center;
@@ -308,5 +307,15 @@ form {
     background-color: lightslategray;
     color: white;
   }
+
+
+  /* mobile navbar toggle icon */
+  .navbar-toggler-icon {
+    filter: invert(100%);
+  }
+
+  /* .navbar-light .navbar-toggler {
+    color: white;
+  } */
 }
 
