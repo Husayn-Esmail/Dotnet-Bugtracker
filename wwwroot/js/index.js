@@ -3,9 +3,10 @@ const issues = document.querySelectorAll('.issue');
 const finalItem = issues[issues.length - 1];
 const firstItem = issues[0];
 
-firstItem.querySelector('a').classList.add('top')
-finalItem.querySelector('a').classList.add('bottom');
-
+if (issues.length !== 0) {
+    firstItem.querySelector('a').classList.add('top');
+    finalItem.querySelector('a').classList.add('bottom');
+}
 
 // dynamically adds correct class to priority
 const priority = document.querySelectorAll('.priority');
@@ -83,4 +84,14 @@ for (var i = 0; i < issueStatus.length; i++) {
             break;
         }
         isstatus.innerHTML = "";
+}
+
+const form = document.querySelector('.search-form')
+console.log(form.children[0].value);
+if (form.children[0].value !== "") {
+    const x = document.createElement("button");
+    x.value = "back";
+    x.classList.add("back");
+    x.classList.add("button");
+    
 }
