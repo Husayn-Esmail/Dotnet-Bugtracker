@@ -86,12 +86,24 @@ for (var i = 0; i < issueStatus.length; i++) {
         isstatus.innerHTML = "";
 }
 
-const form = document.querySelector('.search-form')
-console.log(form.children[0].value);
-if (form.children[0].value !== "") {
-    const x = document.createElement("button");
-    x.value = "back";
-    x.classList.add("back");
-    x.classList.add("button");
-    
+// get url parameters
+const url = window.location.href
+const queryStringsOnly = url.substring(url.length, url.indexOf("?") + 1);
+const searchParam = new URLSearchParams(queryStringsOnly);
+const searchStringNull = searchParam.get("searchString") === "" || searchParam.get("searchString") === null;
+if (!searchStringNull) {
+    const div = document.createElement("div");
+    div.className = "back-button-container";
+    const back = document.createElement("a");
+    // back.value = "back";
+    back.classList.add("back");
+    back.classList.add("button");
+    back.innerHTML = "Back to list";
+    back.setAttribute("href", "/Bugtracker");
+    back.addEventListener("click", () => {
+        console.log("clicked");
+    })
+    div.appendChild(back);
+    // change this
+    document.getElementsByTagName("body")[0].appendChild(div);
 }
