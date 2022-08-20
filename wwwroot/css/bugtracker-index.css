@@ -45,7 +45,10 @@ form {
 
 .back {
   text-decoration: none;
-  margin: 5rem;
+}
+
+.back-button-container {
+  margin-top: 3rem;
 }
 
 /* Issues List Default */

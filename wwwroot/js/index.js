@@ -95,7 +95,6 @@ if (!searchStringNull) {
     const div = document.createElement("div");
     div.className = "back-button-container";
     const back = document.createElement("a");
-    // back.value = "back";
     back.classList.add("back");
     back.classList.add("button");
     back.innerHTML = "Back to list";
@@ -104,6 +103,5 @@ if (!searchStringNull) {
         console.log("clicked");
     })
     div.appendChild(back);
-    // change this
-    document.getElementsByTagName("body")[0].appendChild(div);
+    document.querySelector("#issues").appendChild(div);
 }
