@@ -63,25 +63,8 @@ namespace bugtracker.Models
         [Display(Name = "Last Modified By")]
         public int? LastModifiedBy { get; set; }
 
-        // public void Init()
-        // {
-        //     if (this.DateTimeCreated == null)
-        //     {
-        //         this.DateTimeCreated = DateTime.Now;
-        //         this.DateTimeModified = DateTime.Now;
-        //         this.Status = "open";
-        //         Console.WriteLine("**********************INITED**********************");
-        //     }
-        // }
-        
-        // public Issue() {
-        //     Init();
-        // }
-
         public void UpdateTimeModified() {
-            this.DateTimeCreated = this.DateTimeCreated;
             this.DateTimeModified = DateTime.Now;
-            Console.WriteLine("**********************UPDATED**********************");
         }
     }
 }

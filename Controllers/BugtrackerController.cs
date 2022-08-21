@@ -20,12 +20,6 @@ namespace bugtracker.Controllers
         }
         
         // GET: Issue
-        // public async Task<IActionResult> Index()
-        // {
-        //     return _context.Issue != null ?
-        //         View(await _context.Issue.ToListAsync()) :
-        //         Problem("Entity set 'BugtrackerContext.Issue' is null.");
-        // }
         public async Task<IActionResult> Index(string searchString)
         {
             var issues = from i in _context.Issue select i;
@@ -71,11 +65,6 @@ namespace bugtracker.Controllers
             {
                 return NotFound();
             }
-            Console.WriteLine($"Before -----------------{issue.DateTimeCreated}-----------------");
-            issue.DateTimeModified = DateTime.Now;
-            Console.WriteLine($"After -----------------{issue.DateTimeCreated}-----------------");
-            Console.WriteLine($"Modified After -----------------{issue.DateTimeModified}-----------------");
-            
             return View(issue);
         }
         
@@ -84,19 +73,11 @@ namespace bugtracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Status,Title,Description,Priority,IssueType,DateTimeCreated,DateTimeModified,LastModifiedBy")] Issue issue)
         {
-            Console.WriteLine($"Modified post-----------------{issue.DateTimeModified}-----------------");
-            Console.WriteLine($"Created Post {issue.DateTimeCreated}");
-            if (issue.DateTimeCreated == null) {
-                Console.WriteLine("*************************");
-            } else {
-                Console.WriteLine("----------------------------");
-            }
             if (id != issue.Id)
             {
                 return NotFound();
             }
-            
-            // update last modified time
+
             if (ModelState.IsValid)
             {
                 try
