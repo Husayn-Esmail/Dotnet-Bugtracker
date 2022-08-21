@@ -1,13 +1,50 @@
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.subheading {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* form */
+.form {
+    justify-content: center;
+}
+
 .form-group select {
     margin-top: 1rem;
 }
 
-.back {
-    margin-top: 1.5rem;
+.buttons a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
-.back a {
-    text-decoration: none;
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-box {
+    width: 100%;
+}
+
+.select-box {
+    height: 3rem;
+}
+
+.select-box:focus {
+    background-color: grey;
+    color: white;
+}
+
+.description-box {
+   white-space: pre-wrap;
+   margin-top: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
