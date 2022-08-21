@@ -69,6 +69,11 @@ namespace bugtracker.Controllers
             {
                 return NotFound();
             }
+            Console.WriteLine($"Before -----------------{issue.DateTimeCreated}-----------------");
+            issue.DateTimeModified = DateTime.Now;
+            Console.WriteLine($"After -----------------{issue.DateTimeCreated}-----------------");
+            Console.WriteLine($"Modified After -----------------{issue.DateTimeModified}-----------------");
+            
             return View(issue);
         }
         
@@ -77,15 +82,24 @@ namespace bugtracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Status,Title,Description,Priority,IssueType")] Issue issue)
         {
+            Console.WriteLine($"Modified post-----------------{issue.DateTimeModified}-----------------");
+            Console.WriteLine($"Created Post {issue.DateTimeCreated}");
+            if (issue.DateTimeCreated == null) {
+                Console.WriteLine("*************************");
+            } else {
+                Console.WriteLine("----------------------------");
+            }
             if (id != issue.Id)
             {
                 return NotFound();
             }
-
+            
+            // update last modified time
             if (ModelState.IsValid)
             {
                 try
                 {
+                    issue.UpdateTimeModified();
                     _context.Update(issue);
                     await _context.SaveChangesAsync();
                 }

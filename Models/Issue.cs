@@ -65,13 +65,23 @@ namespace bugtracker.Models
 
         public void Init()
         {
-            this.DateTimeCreated = DateTime.Now;
-            this.DateTimeModified = DateTime.Now;
-            this.Status = "open";
+            if (this.DateTimeCreated == null)
+            {
+                this.DateTimeCreated = DateTime.Now;
+                this.DateTimeModified = DateTime.Now;
+                this.Status = "open";
+                Console.WriteLine("**********************INITED**********************");
+            }
         }
-
+        
         public Issue() {
             Init();
+        }
+
+        public void UpdateTimeModified() {
+            this.DateTimeCreated = this.DateTimeCreated;
+            this.DateTimeModified = DateTime.Now;
+            Console.WriteLine("**********************UPDATED**********************");
         }
     }
 }
