@@ -49,6 +49,8 @@ namespace bugtracker.Controllers
         {
             if (ModelState.IsValid)
             {
+                issue.DateTimeCreated = DateTime.Now;
+                issue.DateTimeModified = issue.DateTimeCreated;
                 _context.Add(issue);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -80,7 +82,7 @@ namespace bugtracker.Controllers
         // POST: Issue/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Status,Title,Description,Priority,IssueType")] Issue issue)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Status,Title,Description,Priority,IssueType,DateTimeCreated,DateTimeModified,LastModifiedBy")] Issue issue)
         {
             Console.WriteLine($"Modified post-----------------{issue.DateTimeModified}-----------------");
             Console.WriteLine($"Created Post {issue.DateTimeCreated}");

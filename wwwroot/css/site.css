@@ -21,6 +21,11 @@ input {
     font-size: 1.1rem;
 }
 
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
 
 @media (prefers-color-scheme: dark) {
     /* If the operating system is using dark mode, then apply this CSS */
