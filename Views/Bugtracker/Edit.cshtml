@@ -38,7 +38,6 @@
             </div>
             <div class="form-group">
                 <label asp-for="Priority" class="control-label"></label>
-                @* <input asp-for="Priority" class="form-control" /> *@
                 <select asp-for="Priority" class="form-control">
                     <option value="high">High</option>
                     <option value="medium">Medium</option>
@@ -51,21 +50,6 @@
                 <input asp-for="IssueType" class="form-control" />
                 <span asp-validation-for="IssueType" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
-                <label asp-for="DateTimeCreated" class="control-label"></label>
-                <input asp-for="DateTimeCreated" class="form-control" />
-                <span asp-validation-for="DateTimeCreated" class="text-danger"></span>
-            </div> *@
-            @* <div class="form-group">
-                <label asp-for="DateTimeModified" class="control-label"></label>
-                <input asp-for="DateTimeModified" class="form-control" />
-                <span asp-validation-for="DateTimeModified" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastModifiedBy" class="control-label"></label>
-                <input asp-for="LastModifiedBy" class="form-control" />
-                <span asp-validation-for="LastModifiedBy" class="text-danger"></span>
-            </div> *@
             <div class="form-group">
                 <input type="submit" value="Save" class="button" />
             </div>

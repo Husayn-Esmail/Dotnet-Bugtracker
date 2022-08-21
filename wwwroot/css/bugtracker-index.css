@@ -146,7 +146,7 @@ form {
 
 .issue-container {
   position: relative;
-  max-width: 800px;
+  max-width: 30%;
   max-height: 80vh;
   border-radius: 5px;
   background: rgb(52, 52, 52);
