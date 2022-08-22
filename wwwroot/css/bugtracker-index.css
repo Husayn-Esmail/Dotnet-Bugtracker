@@ -70,7 +70,6 @@ form {
   width: 100%;
   text-decoration: none;
   padding: 1rem;
-  border: 1px solid black;
   color: black;
 }
 
@@ -87,6 +86,7 @@ form {
 .bottom {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  border-bottom: 2px solid white !important;
 }
 
 
@@ -302,7 +302,9 @@ form {
   .issue a {
     color: white;
     background-color: grey;
-    border: 2px solid white;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
   }
   
   .issue a:hover {
