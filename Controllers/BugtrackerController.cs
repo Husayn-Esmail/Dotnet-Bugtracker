@@ -102,6 +102,42 @@ namespace bugtracker.Controllers
             return View(issue);
         }
 
+       // GET: Issue/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || _context.Issue == null)
+            {
+                return NotFound();
+            }
+
+            var issue = await _context.Issue
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (issue == null)
+            {
+                return NotFound();
+            }
+
+            return View(issue);
+        }
+
+        // POST: Issue/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            if (_context.Issue == null)
+            {
+                return Problem("Entity set 'BugtrackerContext.Issue'  is null.");
+            }
+            var issue = await _context.Issue.FindAsync(id);
+            if (issue != null)
+            {
+                _context.Issue.Remove(issue);
+            }
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
         private bool IssueExists(int id)
         {
