@@ -1,0 +1,32 @@
+.input-box {
+    width: 100%;
+}
+
+.description-box {
+    margin-top: 1rem;
+}
+
+.description-box:focus {
+    background-color: grey;
+    color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    .form-group select {
+        background-color: grey;
+        color: white;
+        border: transparent;
+    }
+
+    .form-group select:focus {
+        background-color: grey;
+        color: white;
+        border: transparent;
+    }
+
+    .form-group .input-box:focus {
+        background-color: grey;
+        color: white;
+        border: transparent;
+    }
+}
