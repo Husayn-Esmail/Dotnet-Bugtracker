@@ -1,3 +1,35 @@
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.subheading {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* form group styles */
+.form-group .control-label {
+    margin-bottom: 0.8rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group .input-box {
+    margin: 0;
+}
+
+.form-group .description-box {
+    margin: 0;
+}
+
+.form-group .select-box {
+    padding: 0;
+    padding: 0.75rem;
+}
+
 .input-box {
     width: 100%;
 }
@@ -9,6 +41,22 @@
 .description-box:focus {
     background-color: grey;
     color: white;
+}
+
+/* form positioning */
+.form {
+    justify-content: center;
+}
+
+.buttons a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (prefers-color-scheme: dark) {
