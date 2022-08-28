@@ -121,6 +121,7 @@ form {
 
 .modal-footer {
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .modal-header .modal-close {
@@ -268,7 +269,7 @@ form {
 }
 
 .dates {
-  display:flex;
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
