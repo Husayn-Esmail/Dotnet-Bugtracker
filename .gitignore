@@ -13,6 +13,7 @@ CHECKLIST.md
 *.db
 *.db-shm
 *.db-wal
+config.cs
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
