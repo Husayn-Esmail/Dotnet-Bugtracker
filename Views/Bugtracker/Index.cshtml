@@ -59,10 +59,14 @@
                         <div>
                             <p class="userid">Modified by: @Html.DisplayFor(modelItem => item.LastModifiedBy)</p>
                         </div>
-                        <form class="modal-edit">
-                            <button class="button" asp-action="Edit" asp-route-id="@item.Id">Edit</button>
-                            <button class="button delete" asp-action="Delete" asp-route-id="@item.Id">Delete</button>
-                        </form>
+                        <div class="footer-form">
+                            <form class="modal-edit">
+                                <button class="button" asp-action="Edit" asp-route-id="@item.Id">Edit</button>
+                            </form>
+                            <form method="POST">
+                                <button class="button delete" type="submit" asp-action="Delete" asp-route-id="@item.Id">Delete</button>
+                            </form>
+                        </div>
                     </footer>
                 </div>
             </div>
